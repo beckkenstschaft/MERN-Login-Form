@@ -1,30 +1,25 @@
 const express = require("express");
-const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const User = require("../models/users");
+const router = express.Router();
 
 // Login route
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    // Find the user in the database
+    // Find the user by username
     const user = await User.findOne({ username });
-    if (!user) {
-      return res.status(400).json({ msg: "User not found" });
-    }
+    if (!user) return res.status(400).json({ message: "Invalid username or password" });
 
-    // Compare the password
+    // Compare passwords
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ msg: "Invalid credentials" });
-    }
+    if (!isMatch) return res.status(400).json({ message: "Invalid username or password" });
 
-    // Successful login
-    res.json({ msg: "Login successful", user });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
+    // If passwords match, login successful
+    res.status(200).json({ message: "Login successful" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
   }
 });
 

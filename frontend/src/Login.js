@@ -24,29 +24,33 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Username:</label>
+          {/* <label>Username:</label> */}
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            className="input-field"
+            placeholder="Userneme"
             required
           />
         </div>
         <div>
-          <label>Password:</label>
+          {/* <label>Password:</label> */}
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="input-field"
+            placeholder="Password"
             required
           />
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
-        <button type="submit">Login</button>
+        <button type="submit" className="login-button">Login</button>
       </form>
     </div>
   );

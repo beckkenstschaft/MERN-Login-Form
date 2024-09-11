@@ -15,8 +15,12 @@ app.use(express.json());
 app.use("/api/users", require("./routes/userRoutes"));
 
 // Serve the specific index.html for /welcome route
+// app.get("/welcome", (req, res) => {
+//   res.sendFile("C:\\Users\\hp\\Documents\\Documents\\Ongoing_Project\\updated_ats\\public\\index.html");
+// });
+
 app.get("/welcome", (req, res) => {
-  res.sendFile("C:\\Users\\hp\\Documents\\Documents\\Ongoing_Project\\updated_ats\\public\\index.html");
+  res.redirect("http://localhost:3002/index.html");
 });
 
 // Start server

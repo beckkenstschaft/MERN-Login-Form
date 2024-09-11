@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,8 +15,10 @@ const Login = () => {
         username,
         password,
       });
+
       if (res.data) {
-        navigate("/welcome");
+        // navigate("/welcome");
+        window.location.href = "http://localhost:5001/welcome";
       }
     } catch (err) {
       setError("Invalid credentials. Please try again.");

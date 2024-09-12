@@ -1,48 +1,110 @@
-body{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  display: flex;
-  align-items: flex-start;
-}
-
-.container{
+/* General body styling with background gradient and modern aesthetic */
+body {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 10px;
+  align-items: center;
+  background-color: rgb(230, 230, 230);
+  color: #707070;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
 }
 
-.input-field{
-  padding: 5px;
-  margin-top: 20px;
+/* Container styling with dynamic tilt effect */
+.container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  transform: perspective(1000px);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Input field animations for hover and focus */
+.input-fields {
+  width: 70%;
   border-top: none;
   border-left: none;
   border-right: none;
+  border-bottom: solid;
   border-width: 1px;
-  border-color: rgb(125, 125, 125);
-  transition: border-color 0.5s ease;
+  border-color: #4b4b4b;
+  padding: 15px;
+  margin: 15px 30px;
+  background: none;
+  color: #000000;
+  font-size: 16px;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.input-field:hover{
-  border-color: aquamarine;
+.input-fields:hover {
+  background-color: #e0f7fa;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.input-field:focus{
-  border-top: none;
-  border-left: none;
-  border-right: none;
+.input-fields:focus {
+  outline: none;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.login-button{
-  margin-top: 50px;
+/* Button styling with gradient and hover effect */
+.Signup-button {
   width: 50%;
-  border-radius: 20px;
+  margin-top: 80px;
   border: none;
-  height: 30px;
-  background-color: rgb(57, 208, 208);
+  border-radius: 25px;
+  height: 50px;
+  background: #509ee8;
+  transition: background 0.2s ease-out, transform 0.2s ease-out;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  font-size: 16px;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.login-button:hover{
-  background-color: aquamarine;
+.Signup-button:hover {
+  background: #50e89a;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Brand styling */
+.brand-logo {
+  color: #509ee8;
+}
+
+/* Copyright text styling */
+.form-copyright {
+  font-size: 10px;
+  margin-left: 60px;
+}
+
+/* Responsive styling */
+@media(max-width:760px) {
+  body {
+    background: none;
+    background-color: #b3eaf2;
+  }
+  
+  .container {
+    width: 75%;
+  }
+
+  .input-fields {
+    width: 85%;
+  }
 }

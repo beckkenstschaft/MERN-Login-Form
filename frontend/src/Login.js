@@ -83,6 +83,9 @@ const Login = () => {
         {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="submit" className="Signup-button">Login</button>
         <p className="form-copyright">Copyright © 2024 hardCoded v1.1.0</p>
+        <br></br>
+        <br></br>
+        <br></br>
       </form>
     </div>
   );

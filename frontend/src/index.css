@@ -35,7 +35,7 @@ body {
 
 /* Input field animations for hover and focus */
 .input-fields {
-  width: 70%;
+  width: 80%;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -43,7 +43,7 @@ body {
   border-width: 1px;
   border-color: #4b4b4b;
   padding: 15px;
-  margin: 15px 30px;
+  margin-top: 40px;
   background: none;
   color: #000000;
   font-size: 16px;
@@ -63,11 +63,11 @@ body {
 
 /* Button styling with gradient and hover effect */
 .Signup-button {
-  width: 50%;
+  width: 80%;
   margin-top: 80px;
   border: none;
   border-radius: 25px;
-  height: 50px;
+  height: 45px;
   background: #509ee8;
   transition: background 0.2s ease-out, transform 0.2s ease-out;
   cursor: pointer;
@@ -90,7 +90,7 @@ body {
 /* Copyright text styling */
 .form-copyright {
   font-size: 10px;
-  margin-left: 60px;
+  margin-left: 12px;
 }
 
 /* Responsive styling */

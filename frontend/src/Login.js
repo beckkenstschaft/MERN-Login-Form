@@ -18,7 +18,7 @@ const Login = () => {
 
       if (res.data) {
         // navigate("/welcome");
-        window.location.href = "http://localhost:5001/welcome";
+        window.location.href = "https://ats-resume-tracker-qboo.onrender.com/index.html";
       }
     } catch (err) {
       setError("Invalid credentials. Please try again.");
